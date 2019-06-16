@@ -51,8 +51,8 @@ var generateKeyPair = async function(seed_inp,logn,ternary){
         var pr_array = c_api.HEAPU8.slice(prbuffer,prbuffer+c_api.getValue(prsize,'i32'));
         var pu_array = c_api.HEAPU8.slice(pubuffer,pubuffer+c_api.getValue(pusize,'i32'));
         res = {
-            private: pr_array,
-            public: pu_array
+            priv: pr_array,
+            pub: pu_array
         }
     }
 
