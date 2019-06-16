@@ -1,0 +1,22 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build_c",
+            "type": "shell",
+            "command": "source ~/emsdk/emsdk_env.sh && cd c_src && emmake make clean && emmake make emscripten -j6",
+            "group": "build"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "node test.js",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
